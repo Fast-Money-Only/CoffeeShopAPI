@@ -13,10 +13,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-askaksldlkajsd
-asdnasdjkashdkjhasd
-    
-    sadajsd
+
 app.UseHttpsRedirection();
 
 var summaries = new[]
