@@ -15,6 +15,8 @@ if (app.Environment.IsDevelopment())
 }
 askaksldlkajsd
 asdnasdjkashdkjhasd
+    
+    sadajsd
 app.UseHttpsRedirection();
 
 var summaries = new[]
