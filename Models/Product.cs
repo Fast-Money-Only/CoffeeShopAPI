@@ -9,4 +9,5 @@ public class Product
     public Guid ProductNumber { get; set; }
     [ForeignKey("ProductNumber")]
     public Object Item { get; set;}
+    
 }
