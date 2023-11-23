@@ -11,8 +11,6 @@ public class User
     public string Email { get; set; }
     public int Phone { get; set; }
     public string Password { get; set; }
-    [Column(TypeName = "uniqueidentifier")]
+    [ForeignKey("Membership")]
     public Guid MembershipId { get; set; }
-
-    public string test { get; set; }
 }
