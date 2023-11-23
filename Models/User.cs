@@ -13,4 +13,6 @@ public class User
     public string Password { get; set; }
     [Column(TypeName = "uniqueidentifier")]
     public Guid MembershipId { get; set; }
+
+    public string test { get; set; }
 }
