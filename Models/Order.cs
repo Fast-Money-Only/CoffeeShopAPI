@@ -8,7 +8,8 @@ public class Order
     public Guid Id { get; set; }
     public DateTime Created { get; set; }
     public DateTime Pickup { get; set; }
-    
+    public bool IsDone { get; set; }
+
     public Guid CoffeePlaceId { get; set; }
     [ForeignKey("CoffeePlaceId")]
     public CoffeePlace CoffeePlace { get; set; }
