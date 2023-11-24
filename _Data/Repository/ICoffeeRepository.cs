@@ -8,4 +8,5 @@ public interface ICoffeeRepository
     void DeleteCoffee(Guid id);
     IList<Ingredient> CoffeeIngredients(Guid id);
     IList<Cake> CoffeeCake(Guid id);
+    Coffee GetCoffee(Guid id);
 }
