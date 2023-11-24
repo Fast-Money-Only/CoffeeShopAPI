@@ -4,18 +4,27 @@ namespace _Data.Repository;
 
 public class OrderRepository : IOrderRepository
 {
+    private readonly CoffeeShopContext _context;
+
+    public OrderRepository(CoffeeShopContext context)
+    {
+        _context = context;
+    }
+
     public IList<Order> GetAllOrders()
     {
-        return null;
+        return _context.Orders.ToList();
     }
 
     public bool IsDone(Guid id)
     {
-        throw new NotImplementedException();
+        return _context.Orders.Any(x => x.Id == id);
     }
 
-    public Order CreatOrder(Order order)
+    public Order CreateOrder(Order order)
     {
-        throw new NotImplementedException();
+        _context.Orders.Add(order);
+        _context.SaveChanges();
+        return order;
     }
 }
