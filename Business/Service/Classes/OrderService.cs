@@ -1,8 +1,9 @@
+using Business.Service.Interfaces;
 using Model;
 
 namespace _Data.Repository;
 
-public class OrderService : IOrderRepository
+public class OrderService : IOrderService
 {
     private IOrderRepository _orderRepository;
 

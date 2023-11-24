@@ -1,8 +1,9 @@
+using Business.Service.Interfaces;
 using Model;
 
 namespace _Data.Repository;
 
-public class IngredientService : IIngredientRepository
+public class IngredientService : IIngredientService
 {
     private IIngredientRepository _ingredientRepository;
 

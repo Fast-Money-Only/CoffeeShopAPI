@@ -1,8 +1,9 @@
+using Business.Service.Interfaces;
 using Model;
 
 namespace _Data.Repository;
 
-public class UserService : IUserRepository
+public class UserService : IUserService
 {
     private IUserRepository _userRepository;
 

@@ -1,8 +1,9 @@
+using Business.Service.Interfaces;
 using Model;
 
 namespace _Data.Repository;
 
-public class PostService : IPostRepository
+public class PostService : IPostService
 {
     private IPostRepository _postRepository;
 

@@ -1,8 +1,9 @@
+using Business.Service.Interfaces;
 using Model;
 
 namespace _Data.Repository;
 
-public class CakeService : ICakeRepository
+public class CakeService : ICakeService
 {
     private ICakeRepository _cakeRepository;
 

@@ -1,8 +1,9 @@
+using Business.Service.Interfaces;
 using Model;
 
 namespace _Data.Repository;
 
-public class ProductService : IProductRepository
+public class ProductService : IProductService
 {
     private IProductRepository _productRepository;
 

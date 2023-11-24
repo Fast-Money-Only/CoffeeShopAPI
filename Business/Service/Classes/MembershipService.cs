@@ -1,8 +1,9 @@
+using Business.Service.Interfaces;
 using Model;
 
 namespace _Data.Repository;
 
-public class MembershipService : IMembershipRepository
+public class MembershipService : IMembershipService
 {
     private IMembershipRepository _membershipRepository;
 

@@ -1,9 +1,10 @@
 using _Data.Repository;
+using Business.Service.Interfaces;
 using Model;
 
 namespace Business.Service;
 
-public class AddressService : IAddressRepository
+public class AddressService : IAddressService
 {
     private IAddressRepository _addressRepository;
 

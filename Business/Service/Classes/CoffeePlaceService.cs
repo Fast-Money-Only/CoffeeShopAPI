@@ -1,8 +1,9 @@
+using Business.Service.Interfaces;
 using Model;
 
 namespace _Data.Repository;
 
-public class CoffeePlaceService : ICoffeePlaceRepository
+public class CoffeePlaceService : ICoffeePlaceService
 {
     private ICoffeePlaceRepository _coffeePlaceRepository;
 
