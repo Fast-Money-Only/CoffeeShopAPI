@@ -54,7 +54,26 @@ public class CoffeeRepository : ICoffeeRepository
 
     public IList<Cake> CoffeeCake(Guid id)
     {
-        throw new NotImplementedException();
+        IList<Cake> cakes = _context.Cakes.ToList();
+        IList<CoffeeCake> coffeeCakes = _context.CoffeeCakes.ToList();
+
+        IList<Cake> finalCakes = null;
+        
+        foreach (var _coffeeCake in coffeeCakes)
+        {
+            if (_coffeeCake.CoffeeId == id)
+            {
+                foreach (var _cake in cakes)
+                {
+                    if (_coffeeCake.CakeId == _cake.Id)
+                    {
+                        finalCakes.Add(_cake);
+                    }
+                }
+            }
+        }
+
+        return finalCakes;
     }
 
     public Coffee GetCoffee(Guid id)
