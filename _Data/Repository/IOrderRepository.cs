@@ -6,5 +6,5 @@ public interface IOrderRepository
 {
     IList<Order> GetAllOrders();
     bool IsDone(Guid id);
-    Order CreatOrder(Order order);
+    Order CreateOrder(Order order);
 }
