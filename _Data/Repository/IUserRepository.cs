@@ -8,6 +8,6 @@ public interface IUserRepository
     bool UserExists(string email, string password); //Bruges til login
     User UpdateUser(Guid id, User user);
     User CreateUser(User user);
-    
+    void DeleteUser(Guid id);
 
 }
