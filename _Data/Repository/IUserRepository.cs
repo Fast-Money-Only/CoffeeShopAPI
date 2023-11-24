@@ -9,5 +9,6 @@ public interface IUserRepository
     User UpdateUser(Guid id, User user);
     User CreateUser(User user);
     void DeleteUser(Guid id);
+    IList<Order> GetUserOrders(Guid id);
 
 }
