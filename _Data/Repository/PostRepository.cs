@@ -4,23 +4,33 @@ namespace _Data.Repository;
 
 public class PostRepository : IPostRepository
 {
+    private readonly CoffeeShopContext _context;
+
+    public PostRepository(CoffeeShopContext context)
+    {
+        _context = context;
+    }
+
     public IList<Post> GetPosts()
     {
-        throw new NotImplementedException();
+        return _context.Posts.ToList();
     }
 
     public Post GetPost(Guid id)
     {
-        throw new NotImplementedException();
+        return _context.Posts.Find(id);
     }
 
     public Post AddPost(Post post)
     {
-        throw new NotImplementedException();
+        _context.Posts.Add(post);
+        _context.SaveChanges();
+        return post;
     }
 
     public void DeletePost(Guid id)
     {
-        throw new NotImplementedException();
+        _context.Posts.Remove(GetPost(id));
+        _context.SaveChanges();
     }
 }
