@@ -1,9 +1,9 @@
 using Model;
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface IIngredientRepository
+public interface IIngredientService
 {
     Ingredient CreateIngredient(Ingredient ingredient);
-    Ingredient GetIngredient(Guid id);
+    Ingredient? GetIngredient(Guid id);
     void DeleteIngredient(Guid id);
 }

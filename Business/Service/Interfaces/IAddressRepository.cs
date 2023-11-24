@@ -1,11 +1,11 @@
 using Model;
 
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface IAddressRepository
+public interface IAddressService
 {
     Address CreateAddress(Address address);
-    Address GetAddress(Guid id);
+    Address? GetAddress(Guid id);
     Address UpdateAddress(Guid id, Address address);
     void DeleteAddress(Guid id);
 }

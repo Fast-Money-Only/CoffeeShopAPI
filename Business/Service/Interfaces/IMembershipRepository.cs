@@ -1,7 +1,7 @@
 using Model;
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface IMembershipRepository
+public interface IMembershipService
 {
-    Membership GetMemberhip(Guid id);
+    Membership? GetMemberhip(Guid id);
 }

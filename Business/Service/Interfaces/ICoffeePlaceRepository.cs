@@ -1,7 +1,7 @@
 using Model;
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface ICoffeePlaceRepository
+public interface ICoffeePlaceService
 {
-    CoffeePlace GetCoffeePlace(Guid id);
+    CoffeePlace? GetCoffeePlace(Guid id);
 }

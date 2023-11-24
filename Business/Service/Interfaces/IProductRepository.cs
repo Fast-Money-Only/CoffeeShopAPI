@@ -1,11 +1,11 @@
 using Model;
 
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface IProductRepository
+public interface IProductService
 {
     IList<Product> GetProducts();
     Product AddProduct(Product product);
-    Product GetProduct(Guid id);
+    Product? GetProduct(Guid id);
     void DeleteProduct(Guid id);
 }
