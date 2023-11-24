@@ -7,6 +7,10 @@
         <RootNamespace>ClassLibrary1</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Models\Models.csproj" />
+    </ItemGroup>
+
 
     <ItemGroup>
       <ProjectReference Include="..\Models\Models.csproj" />

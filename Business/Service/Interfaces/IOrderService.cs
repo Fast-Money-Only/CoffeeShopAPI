@@ -1,8 +1,8 @@
 using Model;
 
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface IOrderRepository
+public interface IOrderService
 {
     IList<Order> GetAllOrders();
     bool IsDone(Guid id);

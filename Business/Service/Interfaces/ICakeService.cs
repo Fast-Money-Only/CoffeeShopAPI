@@ -1,11 +1,11 @@
 using Model;
 
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface ICakeRepository
+public interface ICakeService
 {
     IList<Cake> GetCakes();
-    Cake GetCake(Guid id);
+    Cake? GetCake(Guid id);
     Cake CreateCake(Cake cake);
     void DeleteCake(Guid id);
 }

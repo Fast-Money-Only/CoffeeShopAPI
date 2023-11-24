@@ -1,10 +1,10 @@
 using Model;
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface IUserRepository
+public interface IUserService
 {
     IList<User> GetUsers();
-    User GetUser(Guid id);
+    User? GetUser(Guid id);
     bool UserExists(string email, string password); //Bruges til login
     User UpdateUser(Guid id, User user);
     User CreateUser(User user);

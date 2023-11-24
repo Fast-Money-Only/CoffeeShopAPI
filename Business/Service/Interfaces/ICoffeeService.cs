@@ -1,12 +1,12 @@
 using Model;
-namespace _Data.Repository;
+namespace Business.Service.Interfaces;
 
-public interface ICoffeeRepository
+public interface ICoffeeService
 {
     IList<Coffee> GetCoffees();
     Coffee CreateCoffee(Coffee coffee);
     void DeleteCoffee(Guid id);
     IList<Ingredient> CoffeeIngredients(Guid id);
     IList<Cake> CoffeeCake(Guid id);
-    Coffee GetCoffee(Guid id);
+    Coffee? GetCoffee(Guid id);
 }
