@@ -23,7 +23,7 @@ public class OrderController : Controller
         return Ok(orders);
     }
     
-    [HttpGet]
+    [HttpGet("{id}")]
     public IActionResult GetOrder(Guid id)
     {
         var order = _orderService.GetOrder(id);
@@ -38,7 +38,7 @@ public class OrderController : Controller
         return CreatedAtAction(nameof(GetOrder), new { id = newOrder.Id }, newOrder);
     }
     
-    [HttpGet]
+    [HttpGet("Get user orders {id}")]
     public IActionResult GetUserOrders(Guid id)
     {
         var orders = _orderService.GetUserOrders(id);

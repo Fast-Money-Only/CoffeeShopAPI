@@ -15,8 +15,7 @@ public class MembershipController : Controller
         _membershipService = membershipService;
     }
     
-    [HttpGet]
-    [Route("GetMembership")]
+    [HttpGet ("{id}")]
     public IActionResult GetMembership(Guid id)
     {
         var membership = _membershipService.GetMemberhip(id);

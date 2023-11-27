@@ -15,15 +15,14 @@ public class IngredientController : Controller
         _ingredientService = ingredientService;
     }
     
-    [HttpGet]
-    [Route("GetIngredient")]
+    [HttpGet("{id}")]
     public IActionResult GetIngredient(Guid id)
     {
         var ingredient = _ingredientService.GetIngredient(id);
         return Ok(ingredient);
     }
     
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public IActionResult DeleteIngredient(Guid id)
     {
         try
