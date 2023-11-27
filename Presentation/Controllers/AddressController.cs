@@ -32,7 +32,7 @@ public class AddressController : Controller
     }
     
     [HttpPost]
-    public IActionResult CreateBorrower([FromBody] Address address)
+    public IActionResult CreateAddress([FromBody] Address address)
     {
         try
         {
@@ -65,7 +65,7 @@ public class AddressController : Controller
     }
     
     [HttpDelete("{id}")]
-    public IActionResult DeleteBorrower(Guid id)
+    public IActionResult DeleteAddress(Guid id)
     {
         try
         {
