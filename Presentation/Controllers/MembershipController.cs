@@ -21,4 +21,11 @@ public class MembershipController : Controller
         var membership = _membershipService.GetMemberhip(id);
         return Ok(membership);
     }
+    
+    [HttpPost]
+    public IActionResult CreateMembership([FromBody] Membership membership)
+    {
+        var newMembership = _membershipService.CreateMembership(membership);
+        return CreatedAtAction(nameof(GetMembership), new { id = newMembership.Id }, newMembership);
+    }
 }

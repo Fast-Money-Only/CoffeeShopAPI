@@ -16,4 +16,9 @@ public class MembershipService : IMembershipService
     {
         return _membershipRepository.GetMemberhip(id);
     }
+
+    public Membership CreateMembership(Membership membership)
+    {
+        return _membershipRepository.CreateMembership(membership);
+    }
 }

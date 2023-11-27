@@ -15,4 +15,11 @@ public class MembershipRepository : IMembershipRepository
     {
         return _context.Memberships.Find(id);
     }
+
+    public Membership CreateMembership(Membership membership)
+    {
+        _context.Memberships.Add(membership);
+        _context.SaveChanges();
+        return membership;
+    }
 }
