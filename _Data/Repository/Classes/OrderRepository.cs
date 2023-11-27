@@ -27,4 +27,25 @@ public class OrderRepository : IOrderRepository
         _context.SaveChanges();
         return order;
     }
+
+    public IList<Order> GetUserOrders(Guid id)
+    {
+        IList<Order> orders = _context.Orders.ToList();
+        IList<Order> userOrders = null;
+
+        foreach (var order in orders)
+        {
+            if (order.UserId == id)
+            {
+                userOrders.Add(order);
+            }
+        }
+
+        return userOrders;
+    }
+
+    public Order? GetOrder(Guid id)
+    {
+        return _context.Orders.Find(id);
+    }
 }
