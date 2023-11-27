@@ -16,6 +16,8 @@ public class OrderService : IOrderService
     {
         return _orderRepository.GetAllOrders();
     }
+    
+    
 
     public bool IsDone(Guid id)
     {
@@ -25,5 +27,15 @@ public class OrderService : IOrderService
     public Order CreateOrder(Order order)
     {
         return _orderRepository.CreateOrder(order);
+    }
+
+    public IList<Order> GetUserOrders(Guid id)
+    {
+        return _orderRepository.GetUserOrders(id);
+    }
+
+    public Order GetOrder(Guid id)
+    {
+        return _orderRepository.GetOrder(id);
     }
 }
