@@ -58,7 +58,7 @@ public class CoffeeController : Controller
     }
     
     [HttpGet]
-    [Route("CoffeeIngredients")]
+    [Route("CoffeeIngredients/{id}")]
     public IActionResult CoffeeIngredients(Guid id)
     {
         var ingredients = _coffeeService.CoffeeIngredients(id);
@@ -67,7 +67,7 @@ public class CoffeeController : Controller
     }
     
     [HttpGet]
-    [Route("CoffeeCake")]
+    [Route("CoffeeCake/{id}")]
     public IActionResult CoffeeCake(Guid id)
     {
         var cakes = _coffeeService.CoffeeCake(id);
