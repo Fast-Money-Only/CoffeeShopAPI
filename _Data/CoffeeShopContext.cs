@@ -9,7 +9,7 @@ public class CoffeeShopContext : DbContext
     {
         
     }
-    
+
     public DbSet<Address> Addresses { get; set; } = null!;
     public DbSet<Cake> Cakes { get; set; } = null!;
     public DbSet<CCoffeIngredient> CCoffeIngredients { get; set; } = null!;
