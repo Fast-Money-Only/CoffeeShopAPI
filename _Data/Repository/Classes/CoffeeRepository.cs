@@ -33,7 +33,7 @@ public class CoffeeRepository : ICoffeeRepository
         IList<Ingredient> ingredients = _context.Ingredients.ToList();
         IList<CoffeeIngredient> coffeeIngredients = _context.CoffeeIngredients.ToList();
 
-        IList<Ingredient> finalIngredients = null;
+        IList<Ingredient> finalIngredients = new List<Ingredient>();
 
         foreach (var _coffee in coffeeIngredients)
         {
@@ -57,7 +57,7 @@ public class CoffeeRepository : ICoffeeRepository
         IList<Cake> cakes = _context.Cakes.ToList();
         IList<CoffeeCake> coffeeCakes = _context.CoffeeCakes.ToList();
 
-        IList<Cake> finalCakes = null;
+        IList<Cake> finalCakes = new List<Cake>();
         
         foreach (var _coffeeCake in coffeeCakes)
         {
