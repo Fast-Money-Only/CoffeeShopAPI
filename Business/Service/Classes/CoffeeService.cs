@@ -46,4 +46,9 @@ public class CoffeeService : ICoffeeService
     {
         return _coffeeRepository.CreateCoffeeIngredient(coffeeIngredient);
     }
+
+    public CoffeeCake CreateCoffeeCake(CoffeeCake coffeeCake)
+    {
+        return _coffeeRepository.CreateCoffeeCake(coffeeCake);
+    }
 }

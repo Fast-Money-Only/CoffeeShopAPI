@@ -90,4 +90,12 @@ public class CoffeeRepository : ICoffeeRepository
         return coffeeIngredient;
 
     }
+
+    public CoffeeCake CreateCoffeeCake(CoffeeCake coffeeCake)
+    {
+        _context.CoffeeCakes.Add(coffeeCake);
+        _context.SaveChanges();
+
+        return coffeeCake;
+    }
 }
