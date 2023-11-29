@@ -80,4 +80,14 @@ public class CoffeeRepository : ICoffeeRepository
     {
        return _context.Coffees.Find(id);
     }
+
+    public CoffeeIngredient CreateCoffeeIngredient(CoffeeIngredient coffeeIngredient)
+    {
+
+        _context.CoffeeIngredients.Add(coffeeIngredient);
+        _context.SaveChanges();
+
+        return coffeeIngredient;
+
+    }
 }

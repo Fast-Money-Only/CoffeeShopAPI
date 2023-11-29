@@ -9,4 +9,5 @@ public interface ICoffeeRepository
     IList<Ingredient> CoffeeIngredients(Guid id);
     IList<Cake> CoffeeCake(Guid id);
     Coffee GetCoffee(Guid id);
+    CoffeeIngredient CreateCoffeeIngredient(CoffeeIngredient coffeeIngredient);
 }

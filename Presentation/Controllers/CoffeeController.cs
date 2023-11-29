@@ -66,6 +66,25 @@ public class CoffeeController : Controller
         return Ok(ingredients);
     }
     
+    [HttpPost]
+    [Route("CoffeeIngredients/Add")]
+    public IActionResult CreateCoffeeIngredient([FromBody] CoffeeIngredient coffeeIngredient)
+    {
+        try
+        {
+            var newCoffeeIngredient = _coffeeService.CreateCoffeeIngredient(coffeeIngredient);
+            _logger.Log(LogLevel.Information, "CreateCoffeeIngredient called");
+            return CreatedAtAction(nameof(GetCoffee), new { id = newCoffeeIngredient.Id }, newCoffeeIngredient);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            _logger.Log(LogLevel.Information, "CreateCoffeeIngredient called, but no coffeeIngredient was created");
+            throw;
+        }
+    }
+    
+    
     [HttpGet]
     [Route("CoffeeCake/{id}")]
     public IActionResult CoffeeCake(Guid id)
