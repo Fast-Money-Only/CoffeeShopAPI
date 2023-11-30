@@ -11,4 +11,5 @@ public interface ICoffeeRepository
     Coffee GetCoffee(Guid id);
     CoffeeIngredient CreateCoffeeIngredient(CoffeeIngredient coffeeIngredient);
     CoffeeCake CreateCoffeeCake(CoffeeCake coffeeCake);
+    
 }
