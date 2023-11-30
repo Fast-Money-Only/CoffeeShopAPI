@@ -3,6 +3,7 @@ using _Data;
 using _Data.Repository;
 using Business.Service;
 using Business.Service.Interfaces;
+using ClassLibrary1.Service.Classes;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,6 +34,7 @@ public class Program
         builder.Services.AddScoped<IPostService, PostService>();
         builder.Services.AddScoped<IProductService, ProductService>();
         builder.Services.AddScoped<IUserService, UserService>();
+        builder.Services.AddScoped<ICustomCoffeeService, CustomCoffeeService>();
         
         //Repositories
         builder.Services.AddScoped<IAddressRepository, AddressRepository>();
@@ -45,6 +47,7 @@ public class Program
         builder.Services.AddScoped<IPostRepository, PostRepository>();
         builder.Services.AddScoped<IProductRepository, ProductRepository>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
+        builder.Services.AddScoped<ICustomCoffeeRepository, CustomCoffeeRepository>();
         builder.Services.AddControllers();
         
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

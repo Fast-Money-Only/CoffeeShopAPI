@@ -10,7 +10,6 @@ namespace Presentation.Controllers;
 public class CustomCoffeeController : Controller
 {
     private readonly ICustomCoffeeService _customCoffeeService;
-    private readonly ILogger<AddressController> _logger;
     
     public CustomCoffeeController(ICustomCoffeeService customCoffeeService)
     {
@@ -24,7 +23,6 @@ public class CustomCoffeeController : Controller
 
         if (customCoffee == null)
         {
-            _logger.Log(LogLevel.Information, "GetAddress called with id {0}, but no address with that id exists", id);
             return NotFound();
         }
         return Ok(customCoffee);
@@ -36,13 +34,11 @@ public class CustomCoffeeController : Controller
         try
         {
             var newCustomCoffee = _customCoffeeService.CreateCustomCoffee(customCoffee);
-            _logger.Log(LogLevel.Information, "CreateAddress called");
             return CreatedAtAction(nameof(GetCustomCoffee), new { id = newCustomCoffee.CustomCoffeeId }, newCustomCoffee);
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
-            _logger.Log(LogLevel.Information, "CreateAddress called, but no address was created");
             throw;
         }
     }
