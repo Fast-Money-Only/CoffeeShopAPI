@@ -69,7 +69,7 @@ public class UserController : Controller
         }
     }
     
-    [HttpGet("Get user orders {id}")]
+    [HttpGet("GetUserOrders/{id}")]
     public IActionResult GetUserOrders(Guid id)
     {
         var userOrders = _userService.GetUserOrders(id);
