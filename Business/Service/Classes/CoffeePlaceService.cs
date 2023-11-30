@@ -16,4 +16,9 @@ public class CoffeePlaceService : ICoffeePlaceService
     {
         return _coffeePlaceRepository.GetCoffeePlace(id);
     }
+
+    public IList<CoffeePlace> GetCoffeePlaces()
+    {
+        return _coffeePlaceRepository.GetCoffeePlaceces();
+    }
 }

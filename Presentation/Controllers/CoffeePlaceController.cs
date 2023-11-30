@@ -16,6 +16,15 @@ public class CoffeePlaceController : Controller
         _logger = logger;
     }
     
+    [HttpGet]
+    [Route("GetCoffeePlaces")]
+    public IActionResult GetCoffeePlaces()
+    {
+        var coffeePlaces = _coffeePlaceService.GetCoffeePlaces();
+        _logger.Log(LogLevel.Information, "GetCoffeePlaces called, returning {0} places", coffeePlaces.Count);
+        return Ok(coffeePlaces);
+    }
+    
     [HttpGet("{id}")]
     public IActionResult GetCoffeePlace(Guid id)
     {

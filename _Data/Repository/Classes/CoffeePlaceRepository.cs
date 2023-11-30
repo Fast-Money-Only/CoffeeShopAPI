@@ -14,4 +14,9 @@ public class CoffeePlaceRepository : ICoffeePlaceRepository
     {
         return _context.CoffeePlaces.Find(id);
     }
+
+    public IList<CoffeePlace> GetCoffeePlaceces()
+    {
+        return _context.CoffeePlaces.ToList();
+    }
 }
