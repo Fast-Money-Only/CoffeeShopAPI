@@ -29,6 +29,16 @@ public class OrderService : IOrderService
         return _orderRepository.CreateOrder(order);
     }
 
+    public OrderProduct CreateOrderProduct(OrderProduct orderProduct)
+    {
+        return _orderRepository.CreateOrderProduct(orderProduct);
+    }
+
+    public IList<OrderProduct> GetOrderProducts()
+    {
+        return _orderRepository.GetOrderProducts();
+    }
+
     public IList<Order> GetUserOrders(Guid id)
     {
         return _orderRepository.GetUserOrders(id);

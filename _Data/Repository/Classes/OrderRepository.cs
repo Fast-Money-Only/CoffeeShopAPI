@@ -44,6 +44,18 @@ public class OrderRepository : IOrderRepository
         return userOrders;
     }
 
+    public OrderProduct CreateOrderProduct(OrderProduct orderProduct)
+    {
+        _context.OrderProducts.Add(orderProduct);
+        _context.SaveChanges();
+        return orderProduct;
+    }
+
+    public IList<OrderProduct> GetOrderProducts()
+    {
+        return _context.OrderProducts.ToList();
+    }
+
     public Order? GetOrder(Guid id)
     {
         return _context.Orders.Find(id);

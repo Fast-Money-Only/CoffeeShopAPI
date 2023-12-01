@@ -52,4 +52,26 @@ public class OrderController : Controller
         var orders = _orderService.GetUserOrders(id);
         return Ok(orders);
     }
+    
+    [HttpGet("GetOrderProducts")]
+    public IActionResult GetOrderProducts(Guid id)
+    {
+        var orderProducts = _orderService.GetOrderProducts();
+        return Ok(orderProducts);
+    }
+    
+    [HttpPost("OrderProducts")]
+    public IActionResult CreateOrderProduct([FromBody] OrderProduct orderProduct)
+    {
+        try
+        {
+            var newOrderProduct = _orderService.CreateOrderProduct(orderProduct);
+            return CreatedAtAction(nameof(GetOrder), new { id = newOrderProduct.Id }, newOrderProduct);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
 }

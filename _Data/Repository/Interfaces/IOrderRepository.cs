@@ -9,5 +9,9 @@ public interface IOrderRepository
     Order CreateOrder(Order order);
     IList<Order> GetUserOrders(Guid id);
     
+    OrderProduct CreateOrderProduct(OrderProduct orderProduct);
+
+    IList<OrderProduct> GetOrderProducts();
+    
     Order? GetOrder(Guid id);
 }
