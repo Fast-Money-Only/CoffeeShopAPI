@@ -54,7 +54,7 @@ public class OrderController : Controller
     }
     
     [HttpGet("GetOrderProducts")]
-    public IActionResult GetOrderProducts(Guid id)
+    public IActionResult GetOrderProducts()
     {
         var orderProducts = _orderService.GetOrderProducts();
         return Ok(orderProducts);
