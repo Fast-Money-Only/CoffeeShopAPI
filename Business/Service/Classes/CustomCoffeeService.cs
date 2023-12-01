@@ -24,4 +24,14 @@ public class CustomCoffeeService : ICustomCoffeeService
     {
         return _customCoffeeRepository.GetCustomCoffee(id);
     }
+
+    public CCoffeIngredient CreateCustomCoffeeIngredient(CCoffeIngredient cCoffeIngredient)
+    {
+        return _customCoffeeRepository.CreateCustomCoffeeIngredient(cCoffeIngredient);
+    }
+
+    public IList<Ingredient> CustomCoffeeIngredients(Guid id)
+    {
+        return _customCoffeeRepository.CustomCoffeeIngredients(id);
+    }
 }
