@@ -31,7 +31,7 @@ public class OrderRepository : IOrderRepository
     public IList<Order> GetUserOrders(Guid id)
     {
         IList<Order> orders = _context.Orders.ToList();
-        IList<Order> userOrders = null;
+        IList<Order> userOrders = new List<Order>();
 
         foreach (var order in orders)
         {
@@ -51,9 +51,20 @@ public class OrderRepository : IOrderRepository
         return orderProduct;
     }
 
-    public IList<OrderProduct> GetOrderProducts()
+    public IList<OrderProduct> GetOrderProducts(Guid id)
     {
-        return _context.OrderProducts.ToList();
+        IList<OrderProduct> orderProducts = _context.OrderProducts.ToList();
+        IList<OrderProduct> userOrderProducts = new List<OrderProduct>();
+
+        foreach (var orderProduct in orderProducts)
+        {
+            if (orderProduct.OrderId == id)
+            {
+                userOrderProducts.Add(orderProduct);
+            }
+        }
+
+        return userOrderProducts;
     }
 
     public Order? GetOrder(Guid id)

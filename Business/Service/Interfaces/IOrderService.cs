@@ -10,7 +10,7 @@ public interface IOrderService
 
     OrderProduct CreateOrderProduct(OrderProduct orderProduct);
 
-    IList<OrderProduct> GetOrderProducts();
+    IList<OrderProduct> GetOrderProducts(Guid id);
 
     IList<Order> GetUserOrders(Guid id);
 
