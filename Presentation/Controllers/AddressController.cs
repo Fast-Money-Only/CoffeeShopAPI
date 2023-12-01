@@ -49,7 +49,7 @@ public class AddressController : Controller
     }
     
     [HttpPut("{id}")]
-    public IActionResult UpdateBorrower(Guid id, [FromBody] Address address)
+    public IActionResult UpdateAddress(Guid id, [FromBody] Address address)
     {
         try
         {

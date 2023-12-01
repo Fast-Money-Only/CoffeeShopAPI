@@ -26,4 +26,9 @@ public class IngredientService : IIngredientService
     {
         _ingredientRepository.DeleteIngredient(id);
     }
+
+    public IList<Ingredient> GetIngredients()
+    {
+        return _ingredientRepository.GetIngredients();
+    }
 }

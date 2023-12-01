@@ -34,11 +34,19 @@ public class OrderController : Controller
     [HttpPost]
     public IActionResult CreateOrder([FromBody] Order order)
     {
-        var newOrder = _orderService.CreateOrder(order);
-        return CreatedAtAction(nameof(GetOrder), new { id = newOrder.Id }, newOrder);
+        try
+        {
+            var newOrder = _orderService.CreateOrder(order);
+            return CreatedAtAction(nameof(GetOrder), new { id = newOrder.Id }, newOrder);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
     
-    [HttpGet("Get user orders {id}")]
+    [HttpGet("GetUserOrders/{id}")]
     public IActionResult GetUserOrders(Guid id)
     {
         var orders = _orderService.GetUserOrders(id);

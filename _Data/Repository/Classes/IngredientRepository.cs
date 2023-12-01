@@ -28,4 +28,9 @@ public class IngredientRepository : IIngredientRepository
         _context.Ingredients.Remove(GetIngredient(id));
         _context.SaveChanges();
     }
+
+    public IList<Ingredient> GetIngredients()
+    {
+        return _context.Ingredients.ToList();
+    }
 }

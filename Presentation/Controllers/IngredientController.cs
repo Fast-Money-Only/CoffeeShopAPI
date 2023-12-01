@@ -15,6 +15,14 @@ public class IngredientController : Controller
         _ingredientService = ingredientService;
     }
     
+    [HttpGet]
+    [Route("GetIngredients")]
+    public IActionResult GetCakes()
+    {
+        var ingredients = _ingredientService.GetIngredients();
+        return Ok(ingredients);
+    }
+    
     [HttpGet("{id}")]
     public IActionResult GetIngredient(Guid id)
     {
