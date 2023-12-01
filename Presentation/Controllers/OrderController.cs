@@ -53,7 +53,7 @@ public class OrderController : Controller
         return Ok(orders);
     }
     
-    [HttpGet("GetOrderProducts")]
+    [HttpGet("GetOrderProducts/{id}")]
     public IActionResult GetOrderProducts(Guid id)
     {
         var orderProducts = _orderService.GetOrderProducts(id);
