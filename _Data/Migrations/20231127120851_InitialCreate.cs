@@ -199,11 +199,12 @@ namespace _Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Pickup = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<string>(type: "datetime2", nullable: false),
+                    Pickup = table.Column<string>(type: "datetime2", nullable: false),
                     IsDone = table.Column<bool>(type: "bit", nullable: false),
                     CoffeePlaceId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    
                 },
                 constraints: table =>
                 {

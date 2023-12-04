@@ -6,8 +6,8 @@ public class Order
 {
     [Column(TypeName = "uniqueidentifier")]
     public Guid Id { get; set; }
-    public DateTime Created { get; set; }
-    public DateTime Pickup { get; set; }
+    public string Created { get; set; }
+    public string Pickup { get; set; }
     public bool IsDone { get; set; }
 
     public Guid CoffeePlaceId { get; set; }
