@@ -1,3 +1,4 @@
+using AutoMapper;
 using Business.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -9,10 +10,12 @@ namespace Presentation.Controllers;
 public class OrderController : Controller
 {
     private readonly IOrderService _orderService;
-    
-    public OrderController(IOrderService orderService)
+    private readonly IMapper _mapper;
+
+    public OrderController(IOrderService orderService, IMapper mapper)
     {
         _orderService = orderService;
+        _mapper = mapper;
     }
     
     [HttpGet]
@@ -32,10 +35,12 @@ public class OrderController : Controller
     
 
     [HttpPost]
-    public IActionResult CreateOrder([FromBody] Order order)
+    public IActionResult CreateOrder([FromBody] CreateOrderDTO createOrderDto)
     {
         try
         {
+            var order = new Order();
+            _mapper.Map(createOrderDto, order);
             var newOrder = _orderService.CreateOrder(order);
             return CreatedAtAction(nameof(GetOrder), new { id = newOrder.Id }, newOrder);
         }

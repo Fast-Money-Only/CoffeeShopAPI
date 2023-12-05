@@ -1,4 +1,5 @@
-﻿using Business.Service.Interfaces;
+﻿using AutoMapper;
+using Business.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 
@@ -9,10 +10,12 @@ namespace Presentation.Controllers;
 public class UserController : Controller
 {
     private readonly IUserService _userService;
+    private readonly IMapper _mapper;
     
-    public UserController(IUserService userService)
+    public UserController(IUserService userService,  IMapper mapper)
     {
         _userService = userService;
+        _mapper = mapper;
     }
     
     [HttpGet]
@@ -35,8 +38,10 @@ public class UserController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreateUser([FromBody] User user)
+    public IActionResult CreateUser([FromBody] CreateUserDTO createUserDto)
     {
+        var user = new User();
+        _mapper.Map(createUserDto, user);
         var newUser = _userService.CreateUser(user);
         return CreatedAtAction(nameof(GetUser), new { id = newUser.Id }, newUser);
     }

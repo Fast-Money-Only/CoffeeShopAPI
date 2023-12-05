@@ -1,3 +1,4 @@
+using AutoMapper;
 using Business.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -9,10 +10,12 @@ namespace Presentation.Controllers;
 public class PostController : Controller
 {
     private readonly IPostService _postService;
+    private readonly IMapper _mapper;
     
-    public PostController(IPostService postService)
+    public PostController(IPostService postService, IMapper mapper)
     {
         _postService = postService;
+        _mapper = mapper;
     }
     
     [HttpGet]
@@ -35,8 +38,10 @@ public class PostController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreatePost([FromBody] Post post)
+    public IActionResult CreatePost([FromBody] CreatePostDTO createPostDto)
     {
+        var post = new Post();
+        _mapper.Map(createPostDto, post);
         var newPost = _postService.AddPost(post);
         return CreatedAtAction(nameof(GetPost), new { id = newPost.Id }, newPost);
     }

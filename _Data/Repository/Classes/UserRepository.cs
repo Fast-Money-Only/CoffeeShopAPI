@@ -1,3 +1,5 @@
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Model;
 
 namespace _Data.Repository;
@@ -9,6 +11,7 @@ public class UserRepository : IUserRepository
     public UserRepository(CoffeeShopContext context)
     {
         _context = context;
+
     }
 
     public IList<User> GetUsers()
