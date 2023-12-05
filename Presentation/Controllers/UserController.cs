@@ -80,4 +80,22 @@ public class UserController : Controller
         var userOrders = _userService.GetUserOrders(id);
         return Ok(userOrders);
     }
+    
+    [HttpGet("LoginUser/{email}/{password}")]
+    public IActionResult LoginUser(string email, string password)
+    {
+        if (email == null || password == null)
+        {
+            return BadRequest();
+        }
+
+        var LoggedUser = _userService.LoginUser(email, password);
+        if (LoggedUser == null)
+        {
+            return NotFound(LoggedUser);
+        }
+
+
+        return Ok(LoggedUser);
+    }
 }

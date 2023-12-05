@@ -11,6 +11,7 @@ public class User
     public string Email { get; set; }
     public int Phone { get; set; }
     public string Password { get; set; }
+    
     public Guid MembershipId { get; set; }
     [ForeignKey("MembershipId")]
     public Membership Membership { get; set; }
