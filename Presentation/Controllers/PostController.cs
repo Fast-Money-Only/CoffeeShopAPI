@@ -40,10 +40,18 @@ public class PostController : Controller
     [HttpPost]
     public IActionResult CreatePost([FromBody] CreatePostDTO createPostDto)
     {
-        var post = new Post();
-        _mapper.Map(createPostDto, post);
-        var newPost = _postService.AddPost(post);
-        return CreatedAtAction(nameof(GetPost), new { id = newPost.Id }, newPost);
+        try
+        {
+            var post = new Post();
+            _mapper.Map(createPostDto, post);
+            var newPost = _postService.AddPost(post);
+            return CreatedAtAction(nameof(GetPost), new { id = newPost.Id }, newPost);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     [HttpDelete("{id}")]
