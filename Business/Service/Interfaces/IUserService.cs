@@ -10,5 +10,6 @@ public interface IUserService
     User CreateUser(User user);
     void DeleteUser(Guid id);
     IList<Order> GetUserOrders(Guid id);
+    User LoginUser(string email, string password);
 
 }

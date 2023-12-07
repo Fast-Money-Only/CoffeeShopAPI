@@ -68,4 +68,9 @@ public class UserRepository : IUserRepository
         }
         return userOrders;
     }
+
+    public User LoginUser(string email, string password)
+    {
+        return _context.Users.FirstOrDefault(_user => _user.Email == email && _user.Password == password);
+    }
 }

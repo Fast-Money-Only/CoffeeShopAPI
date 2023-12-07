@@ -46,4 +46,9 @@ public class UserService : IUserService
     {
         return _userRepository.GetUserOrders(id);
     }
+
+    public User LoginUser(string email, string password)
+    {
+        return _userRepository.LoginUser(email, password);
+    }
 }
