@@ -48,4 +48,14 @@ public class OrderService : IOrderService
     {
         return _orderRepository.GetOrder(id);
     }
+
+    public IList<Order> GetPending()
+    {
+        return _orderRepository.GetPending();
+    }
+
+    public IList<Order> GetDone()
+    {
+        return _orderRepository.GetDone();
+    }
 }

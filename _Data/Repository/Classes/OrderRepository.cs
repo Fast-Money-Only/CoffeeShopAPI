@@ -71,4 +71,34 @@ public class OrderRepository : IOrderRepository
     {
         return _context.Orders.Find(id);
     }
+
+    public IList<Order> GetPending()
+    {
+        IList<Order> orders = _context.Orders.ToList();
+        IList<Order> pendingOrders = new List<Order>();
+
+        foreach (var order in orders)
+        {
+            if (!order.IsDone)
+            {
+                pendingOrders.Add(order);
+            }
+        }
+        return pendingOrders;
+    }
+
+    public IList<Order> GetDone()
+    {
+        IList<Order> orders = _context.Orders.ToList();
+        IList<Order> doneOrders = new List<Order>();
+
+        foreach (var order in orders)
+        {
+            if (order.IsDone)
+            {
+                doneOrders.Add(order);
+            }
+        }
+        return doneOrders;
+    }
 }

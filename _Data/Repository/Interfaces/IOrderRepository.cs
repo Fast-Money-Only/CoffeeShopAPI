@@ -14,4 +14,8 @@ public interface IOrderRepository
     IList<OrderProduct> GetOrderProducts(Guid id);
     
     Order? GetOrder(Guid id);
+
+    IList<Order> GetPending();
+
+    IList<Order> GetDone();
 }

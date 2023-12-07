@@ -15,4 +15,8 @@ public interface IOrderService
     IList<Order> GetUserOrders(Guid id);
 
     Order GetOrder(Guid id);
+    
+    IList<Order> GetPending();
+
+    IList<Order> GetDone();
 }

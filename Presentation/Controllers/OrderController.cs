@@ -26,6 +26,23 @@ public class OrderController : Controller
         return Ok(orders);
     }
     
+    [HttpGet]
+    [Route("GetPending")]
+    public IActionResult GetPending()
+    {
+        var orders = _orderService.GetPending();
+        return Ok(orders);
+    }
+    
+    [HttpGet]
+    [Route("GetDone")]
+    public IActionResult GetDone()
+    {
+        var orders = _orderService.GetDone();
+        return Ok(orders);
+    }
+   
+    
     [HttpGet("{id}")]
     public IActionResult GetOrder(Guid id)
     {
