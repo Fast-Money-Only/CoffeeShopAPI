@@ -33,4 +33,9 @@ public class PostRepository : IPostRepository
         _context.Posts.Remove(GetPost(id));
         _context.SaveChanges();
     }
+
+    public User getUserFromPost(Guid id)
+    {
+        return _context.Users.Find(id);
+    }
 }

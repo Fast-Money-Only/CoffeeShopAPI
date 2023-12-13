@@ -48,6 +48,8 @@ public class PostServiceTests
             Membership = testMembership
         };
 
+        _userService.CreateUser(testUser);
+
         var testPost = new Post
         {
             Id = postID,
@@ -123,6 +125,15 @@ public class PostServiceTests
         _service.DeletePost(postID);
         
         Assert.That(_service.GetPosts(), Has.No.Member(expected));
+    }
+
+    [Test]
+    public void CanGetUserFromPost()
+    {
+        Guid userID = new Guid("312ba721-7720-4681-a5ca-6a8f67d818f7");
+        var expected = _service.GetUserFromPost(userID);
+        
+        Assert.AreEqual("Magnus",expected.Firstname);
     }
     
 }

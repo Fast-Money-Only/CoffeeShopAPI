@@ -31,4 +31,9 @@ public class PostService : IPostService
     {
         _postRepository.DeletePost(id);
     }
+
+    public User GetUserFromPost(Guid id)
+    {
+        return _postRepository.getUserFromPost(id);
+    }
 }

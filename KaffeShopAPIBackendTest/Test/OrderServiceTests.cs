@@ -227,4 +227,63 @@ public class OrderServiceTests
         var actual = _service.GetDone();
         Assert.That(actual.Count, Is.EqualTo(0));
     }
+
+    [Test]
+    public void CanUpdateOrder()
+    {
+        var newMem = new Membership
+        {
+            Id = Guid.NewGuid(),
+            Title = "Admin"
+        };
+        
+        var test = new User
+        {
+            Id = Guid.NewGuid(),
+            Firstname = "Magnus",
+            Lastname = "Andersen",
+            Email = "Madmedmig@gmail.com",
+            Password = "Magnus12",
+            Phone = 12121212,
+            MembershipId = newMem.Id,
+            Membership = newMem
+        };
+        
+        var address = new Address
+        {
+            AddressID = Guid.NewGuid(),
+            CityName = "Tønder",
+            HouseNumber = "5b",
+            PostNumber = 6270,
+            StreetName = "Astro Boy Hansen"
+        };
+        
+        var newCoffeePlace = new CoffeePlace
+        {
+            CoffeePlaceId = Guid.NewGuid(),
+            Address = address,
+            AddressId = address.AddressID,
+            CoffeePlaceName = "Big juicy boy"
+        };
+        
+        Guid oID = new Guid("820b61be-fa03-45ce-9c17-8bfa654706e2");
+        
+        var newOrder = new Order
+        {
+            Id = oID,
+            Created = "Now",
+            Pickup = "Now",
+            IsDone = true,
+            CoffeePlaceId = newCoffeePlace.CoffeePlaceId,
+            CoffeePlace = newCoffeePlace,
+            UserId = test.Id,
+            User = test
+        };
+        
+        
+        _service.UpdateOrder(oID, newOrder);
+        var updatedOrder = _service.GetOrder(oID);
+        
+        Assert.AreEqual(true,updatedOrder.IsDone);
+    }
 }

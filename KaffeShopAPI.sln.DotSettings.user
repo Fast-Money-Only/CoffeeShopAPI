@@ -48,6 +48,8 @@
     &lt;TestId&gt;NUnit3x::39EFFC57-3379-4EEB-BB8E-E21290F83044::net7.0::KaffeShopAPIBackendTest.Test.AddressServiceTests.CanUpdateAddress&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::39EFFC57-3379-4EEB-BB8E-E21290F83044::net7.0::KaffeShopAPIBackendTest.Test.AddressServiceTests.CanDeleteAddress&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::39EFFC57-3379-4EEB-BB8E-E21290F83044::net7.0::KaffeShopAPIBackendTest.Test.CoffeePlaceServiceTests.CanGetCoffeePlace&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::39EFFC57-3379-4EEB-BB8E-E21290F83044::net7.0::KaffeShopAPIBackendTest.Test.OrderServiceTests.CanUpdateOrder&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::39EFFC57-3379-4EEB-BB8E-E21290F83044::net7.0::KaffeShopAPIBackendTest.Test.PostServiceTests.CanGetUserFromPost&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c2c385e1_002D3fa8_002D4e7f_002D8d10_002D0362d4e27f2c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CanGetUsers" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

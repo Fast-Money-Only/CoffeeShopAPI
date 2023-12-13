@@ -67,4 +67,15 @@ public class PostController : Controller
             return NotFound();
         }
     }
+    
+    [HttpGet("GetUser/{id}")]
+    public IActionResult GetUserFromPost(Guid id)
+    {
+        var user = _postService.GetUserFromPost(id);
+        if (user == null)
+        {
+            return NotFound();
+        }
+        return Ok(user);
+    }
 }

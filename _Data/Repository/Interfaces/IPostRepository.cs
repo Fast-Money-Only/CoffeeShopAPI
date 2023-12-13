@@ -8,4 +8,5 @@ public interface IPostRepository
     Post GetPost(Guid id);
     Post AddPost(Post post);
     void DeletePost(Guid id);
+    User getUserFromPost(Guid id);
 }

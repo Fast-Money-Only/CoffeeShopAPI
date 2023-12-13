@@ -18,4 +18,5 @@ public interface IOrderRepository
     IList<Order> GetPending();
 
     IList<Order> GetDone();
+    Order UpdateOrder(Guid id, Order order);
 }

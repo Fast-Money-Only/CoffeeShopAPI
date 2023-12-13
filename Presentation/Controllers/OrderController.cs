@@ -1,3 +1,5 @@
+using System.Collections;
+using _Data.Repository;
 using AutoMapper;
 using Business.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -10,11 +12,13 @@ namespace Presentation.Controllers;
 public class OrderController : Controller
 {
     private readonly IOrderService _orderService;
+    private readonly IProductService _productService;
     private readonly IMapper _mapper;
 
-    public OrderController(IOrderService orderService, IMapper mapper)
+    public OrderController(IOrderService orderService, IProductService productService, IMapper mapper)
     {
         _orderService = orderService;
+        _productService = productService;
         _mapper = mapper;
     }
     
@@ -79,7 +83,18 @@ public class OrderController : Controller
     public IActionResult GetOrderProducts(Guid id)
     {
         var orderProducts = _orderService.GetOrderProducts(id);
-        return Ok(orderProducts);
+        IList<GetOrderProductDTO> products = new List<GetOrderProductDTO>();
+        foreach (var oProduct in orderProducts)
+        {
+            var product = _productService.GetProduct(oProduct.ProductId);
+            var productDto = new GetOrderProductDTO();
+            productDto.Id = oProduct.Id;
+            productDto.Name = product.ProductName;
+            productDto.Quantity = oProduct.Quantity;
+            
+            products.Add(productDto);
+        }
+        return Ok(products);
     }
     
     [HttpPost("OrderProducts")]
@@ -94,6 +109,23 @@ public class OrderController : Controller
         {
             Console.WriteLine(e);
             throw;
+        }
+    }
+    
+    [HttpPut("{id}")]
+    public IActionResult UpdateOrder(Guid id, [FromBody] CreateOrderDTO orderDto)
+    {
+        
+        try
+        {
+            var order = _orderService.GetOrder(id);
+            _mapper.Map(orderDto, order);
+            var updatedOrder = _orderService.UpdateOrder(id, order);
+            return Ok(updatedOrder);
+        }
+        catch (Exception e)
+        {
+            return NotFound();
         }
     }
 }

@@ -8,4 +8,6 @@ public interface IPostService
     Post? GetPost(Guid id);
     Post AddPost(Post post);
     void DeletePost(Guid id);
+
+    User GetUserFromPost(Guid id);
 }
