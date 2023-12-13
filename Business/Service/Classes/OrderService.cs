@@ -58,4 +58,9 @@ public class OrderService : IOrderService
     {
         return _orderRepository.GetDone();
     }
+
+    public Order UpdateOrder(Guid id, Order order)
+    {
+        return _orderRepository.UpdateOrder(id, order);
+    }
 }

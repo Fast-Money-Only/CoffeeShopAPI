@@ -101,4 +101,12 @@ public class OrderRepository : IOrderRepository
         }
         return doneOrders;
     }
+
+    public Order UpdateOrder(Guid id, Order order)
+    {
+        var orderToUpdate = GetOrder(id);
+        orderToUpdate!.IsDone = order.IsDone;
+        _context.SaveChanges();
+        return orderToUpdate;
+    }
 }
