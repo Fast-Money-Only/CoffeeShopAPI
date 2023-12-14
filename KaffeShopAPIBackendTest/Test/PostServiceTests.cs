@@ -55,6 +55,7 @@ public class PostServiceTests
             Id = postID,
             Title = "Mega nice coffee",
             Img = "blabla.jpg",
+            Like = 0,
             UserId = userID,
             User = testUser
         };
@@ -107,6 +108,7 @@ public class PostServiceTests
             Id = postID,
             Title = "Mega nice coffee",
             Img = "blabla.jpg",
+            Like = 0,
             UserId = userID,
             User = testUser
         };

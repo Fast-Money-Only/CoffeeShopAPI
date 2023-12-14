@@ -7,4 +7,6 @@ public class CustomCoffee
     [Column(TypeName = "uniqueidentifier")]
     public Guid CustomCoffeeId { get; set; }
     public string Name { get; set; }
+    
+    public double Price { get; set; }
 }
