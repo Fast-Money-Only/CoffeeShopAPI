@@ -112,6 +112,7 @@ public class UserController : Controller
             if (user.Email == email)
             {
                 return Ok();
+                
             }
         }
         return NotFound();
