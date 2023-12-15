@@ -47,10 +47,12 @@ public class UserController : Controller
     }
 
     [HttpPut("{id}")]
-    public IActionResult UpdateUser(Guid id, [FromBody] User user)
+    public IActionResult UpdateUser(Guid id, [FromBody] CreateUserDTO userDto)
     {
         try
         {
+            var user = _userService.GetUser(id);
+            _mapper.Map(userDto, user);
             var updatedUser = _userService.UpdateUser(id, user);
             return Ok(updatedUser);
         }
