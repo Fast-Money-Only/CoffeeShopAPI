@@ -130,7 +130,7 @@ public class UserServiceTests
     [Test]
     public void DoesUserExists()
     {
-        Assert.True(_service.UserExists("Madmedmig@gmail.com","Magnus12"));
+        Assert.True(_service.UserExists("Madmedmig@gmail.com"));
     }
     
     

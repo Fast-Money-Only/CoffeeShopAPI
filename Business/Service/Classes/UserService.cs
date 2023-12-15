@@ -22,9 +22,9 @@ public class UserService : IUserService
         return _userRepository.GetUser(id);
     }
 
-    public bool UserExists(string email, string password)
+    public bool UserExists(string email)
     {
-        return _userRepository.UserExists(email, password);
+        return _userRepository.UserExists(email);
     }
 
     public User UpdateUser(Guid id, User user)

@@ -26,9 +26,9 @@ public class UserRepository : IUserRepository
         return _context.Users.Find(id);
     }
 
-    public bool UserExists(string email, string password)
+    public bool UserExists(string email)
     {
-        return _context.Users.Any(x => x.Email == email && x.Password == password);
+        return _context.Users.Any(x => x.Email == email);
     }
 
     public User UpdateUser(Guid id, User user)

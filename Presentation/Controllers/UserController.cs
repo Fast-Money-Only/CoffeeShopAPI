@@ -98,4 +98,20 @@ public class UserController : Controller
 
         return Ok(LoggedUser);
     }
+
+    [HttpGet("DoesUserExist/{email}")]
+
+    public IActionResult UserExist(string email)
+    {
+        var userList = _userService.GetUsers();
+        
+        foreach(var user in userList)
+        {
+            if (user.Email == email)
+            {
+                return Ok();
+            }
+        }
+        return NotFound();
+    }
 }
