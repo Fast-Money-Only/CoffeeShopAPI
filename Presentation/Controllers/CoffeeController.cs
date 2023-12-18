@@ -40,6 +40,21 @@ public class CoffeeController : Controller
         return Ok(coffee);
     }
     
+    [HttpDelete("{id}")]
+    public IActionResult DeleteCoffee(Guid id)
+    {
+        try
+        {
+            _coffeeService.DeleteCoffee(id);
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+            return NotFound();
+        }
+    }
+    
+    
     [HttpPost]
     public IActionResult CreateCoffee([FromBody] Coffee coffee)
     {
