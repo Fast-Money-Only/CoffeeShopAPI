@@ -28,7 +28,8 @@ public class ProductServiceTests
         {
             ProductId = g,
             ProductName = "Coffee",
-            ProductNumber = prodNum
+            ProductNumber = prodNum,
+            Price = 200.0
         };
 
         _service.AddProduct(product);
@@ -61,6 +62,7 @@ public class ProductServiceTests
             ProductId = prodId,
             ProductName = "Cream",
             ProductNumber = prodNum,
+            Price = 150
         };
 
         _service.AddProduct(expected);

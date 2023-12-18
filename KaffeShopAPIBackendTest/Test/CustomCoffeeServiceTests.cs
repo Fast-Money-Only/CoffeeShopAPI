@@ -33,7 +33,8 @@ public class CustomCoffeeServiceTests
         var testCustomCoffee = new CustomCoffee
         {
             CustomCoffeeId = g,
-            Name = "Pernicano"
+            Name = "Pernicano",
+            Price = 250.0
         };
         
         _service.CreateCustomCoffee(testCustomCoffee);

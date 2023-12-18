@@ -26,7 +26,8 @@ public class CakeServiceTests
         var testCake = new Cake
         {
             Id = g,
-            Name = "Drømmekage"
+            Name = "Drømmekage",
+            Price = 12.5
         };
 
         _service.CreateCake(testCake);
@@ -54,9 +55,10 @@ public class CakeServiceTests
         var testCake = new Cake
         {
             Id = cakeId,
-            Name = "Citronmåne"
+            Name = "Citronmåne",
+            Price = 20.0
         };
-
+    
         _service.CreateCake(testCake);
         var actual = _service.GetCake(cakeId);
         
