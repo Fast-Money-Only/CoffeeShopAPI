@@ -38,7 +38,8 @@ public class CoffeeServiceTests
         var testCoffee = new Coffee
         {
             Id = testCID,
-            Name = "Espresso"
+            Name = "Espresso",
+            Price = 40.0
         };
 
         Guid testcakeID = new Guid("f91afa18-8233-49b5-981a-452f17e698d3");
@@ -46,7 +47,8 @@ public class CoffeeServiceTests
         var testCake = new Cake
         {
             Id = testcakeID,
-            Name = "Drømmekage"
+            Name = "Drømmekage",
+            Price = 25.5
         };
 
         Guid ingId = new Guid("728889cd-35dc-4601-816e-5b1e192f091a");
@@ -54,7 +56,7 @@ public class CoffeeServiceTests
         var testIng = new Ingredient
         {
             Id = ingId,
-            Name = "Cream"
+            Name = "Cream",
         };
 
         Guid testCoffIng = new Guid("87049c5d-a440-46d1-a476-b2f55e6e0d4c");
@@ -99,7 +101,8 @@ public class CoffeeServiceTests
         var testCoffee = new Coffee
         {
             Id = coffeeId,
-            Name = "Pernicano"
+            Name = "Pernicano",
+            Price = 35.0
         };
 
         _service.CreateCoffee(testCoffee);
@@ -144,7 +147,8 @@ public class CoffeeServiceTests
         var testCoffee = new Coffee
         {
             Id = coffId,
-            Name = "Magnucano"
+            Name = "Magnucano",
+            Price = 100.0
         };
         _service.CreateCoffee(testCoffee);
 
@@ -200,7 +204,8 @@ public class CoffeeServiceTests
         var testCake = new Cake
         {
             Id = cakeId,
-            Name = "Brunsviger"
+            Name = "Brunsviger",
+            Price = 20.5
         };
 
         _cakeService.CreateCake(testCake);
