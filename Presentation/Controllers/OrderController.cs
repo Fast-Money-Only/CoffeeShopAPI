@@ -91,6 +91,7 @@ public class OrderController : Controller
             productDto.Id = oProduct.Id;
             productDto.Name = product.ProductName;
             productDto.Quantity = oProduct.Quantity;
+            productDto.Price = product.Price * oProduct.Quantity;
             
             products.Add(productDto);
         }
