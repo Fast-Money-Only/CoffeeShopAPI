@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Data", "_Data\_Data.csproj", "{29628509-C6F0-47E3-83BB-3A9F95FB9BD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaffeShopAPIBackendTest", "KaffeShopAPIBackendTest\KaffeShopAPIBackendTest.csproj", "{39EFFC57-3379-4EEB-BB8E-E21290F83044}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{29628509-C6F0-47E3-83BB-3A9F95FB9BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29628509-C6F0-47E3-83BB-3A9F95FB9BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29628509-C6F0-47E3-83BB-3A9F95FB9BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EFFC57-3379-4EEB-BB8E-E21290F83044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EFFC57-3379-4EEB-BB8E-E21290F83044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EFFC57-3379-4EEB-BB8E-E21290F83044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EFFC57-3379-4EEB-BB8E-E21290F83044}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
